@@ -15,7 +15,9 @@ class CompanySerializer(serializers.ModelSerializer):
         model = Company
         fields = ('id', 'company', 'industry', 'location')
 
-class JobSerializer(serializers.ModelSerializer)
+class JobSerializer(serializers.ModelSerializer):
+
+    company = CompanySerializer()
 
     class Meta:
         model = Job
