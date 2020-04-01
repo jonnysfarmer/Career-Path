@@ -21,4 +21,4 @@ class JobSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Job
-        fields = ('id', 'company', 'title', 'experience', 'job', 'sector', 'shortlist', 'applied', 'active' )
+        fields = ('id', 'company', 'title', 'experience', 'job', 'sector', 'shortlist', 'active')

@@ -48,7 +48,7 @@ class Job(models.Model):
     job = models.CharField(max_length=40, choices=JOB_CHOICES)
     sector = models.CharField(max_length=40, choices=SECTOR_CHOICES)
     shortlist = models.ForeignKey(User, related_name='user', on_delete=models.CASCADE)
-    applied = models.ForeignKey(User, related_name='user', on_delete=models.CASCADE)
+    # applied = models.ForeignKey(User, related_name='user', on_delete=models.CASCADE)
     active = models.BooleanField(default=False)
 
     def __str__(self):
