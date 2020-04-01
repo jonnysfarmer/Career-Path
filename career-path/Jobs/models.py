@@ -20,15 +20,36 @@ User = get_user_model()
 #         return f'{self.medicine}'
 
 class Company(models.Model):
-    name = models.CharField(max_length=200)
+    company = models.CharField(max_length=200)
     industry = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.company}'
 
     # Need to add some more stuff
 
 class Job(models.Model):
+    JOB_CHOICES = [
+            ('m&a', 'Mergers & Acquisitions'),
+            ('pe', 'Private Equity'),
+            ('manconsult', 'Management Consultant'),
+            ('corp', 'Corporate'),
+        ]
+    SECTOR_CHOICES = [
+            ('tmt', 'Telecommunications, Media and Technology'),
+            ('infra', 'Infrastructure'),
+            ('fig', 'Financial Services'),
+        ]
+
     company = models.ForeignKey(Company, related_name='comapny', on_delete=models.CASCADE)
+    title = models.CharField(max_length=300)
     experience = models.IntegerField(blank=True, null=True)
+    job = models.CharField(max_length=40, choices=JOB_CHOICES)
+    sector = models.CharField(max_length=40, choices=SECTOR_CHOICES)
+    shortlist = models.ForeignKey(User, related_name='user', on_delete=models.CASCADE)
+    applied = models.ForeignKey(User, related_name='user', on_delete=models.CASCADE)
+    active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.company} - {self.title} - {self.job} - {self.active}'
