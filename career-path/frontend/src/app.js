@@ -1,31 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { Switch, Route, HashRouter } from 'react-router-dom'
+import { Switch, Route, HashRouter, Router } from 'react-router-dom'
 
-// import ResponsiveDrawer from './components/Navbar'
-// import Home from './components/Home'
-// import Register from './components/pages/Register'
-// import Login from './components/pages/Login'
-// import Prescriptions from './components/pages/Prescriptions'
-// import Prescription from './components/pages/Prescription'
-// import Profile from './components/pages/Profile'
-// import Logout from './components/Logout'
-// import EditProfile from './components/pages/EditProfile'
-// import CreatePrescription from './components/pages/CreatePrescription2'
-// import EditPrescription from './components/pages/EditPrescription'
-// import EditReminder from './components/pages/EditReminder'
+import ResponsiveDrawer from './Components/Nav'
 
 
-// //STYLES FOR OVERWRITING MATERIAL UI
-// import './styles/main.css'
-
-const App = () => {
-
-
+function App() {
   return (
-    <div>
-      Hello World
-    </div>
+    <HashRouter>
+      <ResponsiveDrawer />
+      <Switch>
+        {/* <Route exact path='/' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/portfolio' component={Portfolio} />
+        <Route exact path='/contact' component={Contact} /> */}
+
+      </Switch>
+    </HashRouter>
   )
 }
 
