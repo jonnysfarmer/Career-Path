@@ -4,10 +4,11 @@ import { Link, useHistory } from 'react-router-dom'
 import { AppBar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemText, Toolbar, Button, Typography, ThemeProvider } from '@material-ui/core'
 
 import MenuIcon from '@material-ui/icons/Menu'
-import HomeIcon from '@material-ui/icons/Home'
+// import HomeIcon from '@material-ui/icons/Home'
+import HomeWorkIcon from '@material-ui/icons/HomeWork'
 
 // import { indigo, teal, red, green, orange } from '@material-ui/core/colors'
-import { makeStyles, createMuiTheme, withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 
 const drawerWidth = 200
@@ -36,12 +37,10 @@ const useStyles = makeStyles(theme => ({
       display: 'none'
     }
   },
-  desktopMenuButton: {
-    marginRight: theme.spacing(1)
-  },
-  rHS: {
-    display: 'flex',
-    justifyContent: 'flex-end'
+  grow: {
+
+    flexGrow: 1
+
 
   },
   toolbar: theme.mixins.toolbar,
@@ -60,8 +59,8 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen)
   }
 
-  const history = useHistory()
-  const location = history.location.pathname
+  // const history = useHistory()
+  // const location = history.location.pathname
 
   const drawer = (
     <div>
@@ -71,7 +70,7 @@ function ResponsiveDrawer(props) {
         {['Login', 'Register'].map((elem, i) => (
 
           // <Link to={`/${elem}`} key={i} color='primary'>
-          <ListItem key={i}> 
+          <ListItem key={i}>
             <Typography component="h3" variant="subtitle1" color='textSecondary' >
               {elem}
             </Typography>
@@ -88,28 +87,26 @@ function ResponsiveDrawer(props) {
       {/* <ThemeProvider theme={theme}> */}
 
       <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar className={classes.rHS}>
-          {location !== '/' && <IconButton
-            className={classes.desktopMenuButton}
-            href="/#/"
-            color="primary"
-          >
-            <HomeIcon />
-          </IconButton>
-          }
+        <Toolbar >
+
+          <Typography variant="h6" color='textSecondary' className={classes.grow}>
+            Path
+          </Typography>
+
+          <Button edge='end' href="/#/register/" color="primary" size='small' variant='contained' className={classes.desktopMenuButton}>Create Account</Button>
+          <Button edge='end' href="/#/login/" color="primary" size='small' className={classes.desktopMenuButton}>Login</Button>
           <IconButton
             color="primary"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
             className={classes.menuButton}
+            size='small'
           >
             <MenuIcon />
           </IconButton>
-          <Hidden smDown>
-            <Button href="/#/login/" color="primary" className={classes.desktopMenuButton}>Login</Button>
-            <Button href="/#/register/" color="primary" className={classes.desktopMenuButton}>Register</Button>
-          </Hidden>
+
+
 
         </Toolbar>
       </AppBar>
