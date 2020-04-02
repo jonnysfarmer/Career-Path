@@ -93,7 +93,7 @@ function ResponsiveDrawer(props) {
             Path
           </Typography>
 
-          <Button edge='end' href="/#/register/" color="primary" size='small' variant='contained' className={classes.desktopMenuButton}>Create Account</Button>
+          <Button edge='end' href="/#/register/" color="primary" size='small' variant='outlined' className={classes.desktopMenuButton}>Sign Up</Button>
           <Button edge='end' href="/#/login/" color="primary" size='small' className={classes.desktopMenuButton}>Login</Button>
           <IconButton
             color="primary"
