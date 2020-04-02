@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
-import { AppBar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemText, Toolbar, Button, Typography, ThemeProvider } from '@material-ui/core'
+import { AppBar, Container, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemText, Toolbar, Button, Typography, ThemeProvider } from '@material-ui/core'
 
 import MenuIcon from '@material-ui/icons/Menu'
 // import HomeIcon from '@material-ui/icons/Home'
@@ -9,6 +9,7 @@ import HomeWorkIcon from '@material-ui/icons/HomeWork'
 
 // import { indigo, teal, red, green, orange } from '@material-ui/core/colors'
 import { makeStyles } from '@material-ui/core/styles'
+import { maxWidth } from '@material-ui/system'
 
 
 const drawerWidth = 200
@@ -88,7 +89,6 @@ function ResponsiveDrawer(props) {
 
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar >
-
           <Typography variant="h6" color='textSecondary' className={classes.grow}>
             Path
           </Typography>
@@ -105,7 +105,6 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-
 
 
         </Toolbar>
