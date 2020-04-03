@@ -37,12 +37,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainFeaturedPost() {
   const classes = useStyles()
-  // const { post } = props;
+
 
   return (
     <Paper className={classes.mainFeaturedPost} >
-      {/* Increase the priority of the hero background image */}
-      {/* {<img style={{ display: 'none' }} src='https://source.unsplash.com/random' alt='title' />} */}
+    
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
@@ -51,7 +50,7 @@ export default function MainFeaturedPost() {
               The smarter way to get hired
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              World
+              Covering M&A, Management Consulting and Private Equity
             </Typography>
             <Link variant="subtitle1" href="#">
               Hello World
