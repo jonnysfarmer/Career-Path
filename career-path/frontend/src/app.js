@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom'
 import { Switch, Route, HashRouter, Router } from 'react-router-dom'
 
 import ResponsiveDrawer from './Components/Nav'
-
+import Home from './Components/Pages/Home/Home'
 
 function App() {
   return (
     <HashRouter>
       <ResponsiveDrawer />
       <Switch>
-        {/* <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/portfolio' component={Portfolio} />
-        <Route exact path='/contact' component={Contact} /> */}
+        <Route exact path='/' component={Home} />
+
 
       </Switch>
     </HashRouter>

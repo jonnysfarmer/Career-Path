@@ -39,9 +39,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   grow: {
-
     flexGrow: 1
-
 
   },
   toolbar: theme.mixins.toolbar,
@@ -87,7 +85,7 @@ function ResponsiveDrawer(props) {
       {/* <CssBaseline /> */}
       {/* <ThemeProvider theme={theme}> */}
 
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="sticky" className={classes.appBar}>
         <Toolbar >
           <Typography variant="h6" color='textSecondary' className={classes.grow}>
             Path
