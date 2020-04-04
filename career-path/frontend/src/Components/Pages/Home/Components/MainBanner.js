@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.3)'
+    backgroundColor: 'rgba(0,0,0,.2)'
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -50,11 +50,11 @@ export default function MainFeaturedPost() {
               The smarter way to get hired
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              Covering M&A, Management Consulting and Private Equity
+              in the M&A, Management Consulting and Private Equity space
             </Typography>
-            <Link variant="subtitle1" href="#">
+            {/* <Link variant="subtitle1" href="#">
               Hello World
-            </Link>
+            </Link> */}
           </div>
         </Grid>
       </Grid>
