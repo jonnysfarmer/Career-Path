@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://d3jh33bzyw1wep.cloudfront.net/s3/W1siZiIsIjIwMTgvMDIvMTQvMTIvMTUvMTQvODUzL0pvYiBTZWFyY2guanBnIl0sWyJwIiwidGh1bWIiLCI4MDB4NDUwIyJdXQ)',
+    backgroundImage: 'url(https://www.careershifters.org/sites/default/files/styles/article_node/public/field/image/7880846472_52569c4a69_c.jpg?itok=osyNaoWx)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'

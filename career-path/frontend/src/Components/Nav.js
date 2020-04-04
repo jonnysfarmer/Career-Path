@@ -5,11 +5,9 @@ import { AppBar, Container, CssBaseline, Divider, Drawer, Hidden, IconButton, Li
 
 import MenuIcon from '@material-ui/icons/Menu'
 // import HomeIcon from '@material-ui/icons/Home'
-import HomeWorkIcon from '@material-ui/icons/HomeWork'
 
 // import { indigo, teal, red, green, orange } from '@material-ui/core/colors'
 import { makeStyles } from '@material-ui/core/styles'
-import { maxWidth } from '@material-ui/system'
 
 
 const drawerWidth = 200
@@ -91,7 +89,7 @@ function ResponsiveDrawer(props) {
             Path
           </Typography>
 
-          <Button edge='end' href="/#/register/" color="primary" size='small' variant='outlined' className={classes.desktopMenuButton}>Sign Up</Button>
+          <Button edge='end' href="/#/signup/" color="primary" size='small' variant='outlined' className={classes.desktopMenuButton}>Sign Up</Button>
           <Button edge='end' href="/#/login/" color="primary" size='small' className={classes.desktopMenuButton}>Login</Button>
           <IconButton
             color="primary"

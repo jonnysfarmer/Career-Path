@@ -4,6 +4,7 @@ import { Switch, Route, HashRouter, Router } from 'react-router-dom'
 
 import ResponsiveDrawer from './Components/Nav'
 import Home from './Components/Pages/Home/Home'
+import Register from './Components/Pages/Register/Register'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <ResponsiveDrawer />
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/signup' component={Register} />
 
 
       </Switch>
