@@ -5,11 +5,13 @@ import { ThemeProvider, Avatar, Button, CssBaseline, TextField, Box, Typography,
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
+
 import { makeStyles } from '@material-ui/core/styles'
 
 //Material UI our styles/icons
 // import { useStyles, theme } from '../../styles/styles'
 //Our Libraries/Components
+import Auth from '../../../lib/auth'
 // import Copyright from '../Copyright'
 
 const useStyles = makeStyles(theme => ({
@@ -22,13 +24,11 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-
-
-const Register = (props) => {
+const Login = (props) => {
 
   const classes = useStyles()
 
-  const [registerInfo, setRegisterInfo] = useState({})
+  const [loginInfo, setLoginInfo] = useState()
   const [err, setErrors] = useState({})
   const [showPassword, setShowPassword] = useState(false)
 
@@ -40,17 +40,22 @@ const Register = (props) => {
     event.preventDefault()
   }
 
-  //===== Update form info to state
+  //===== Get form input data
   const handleChange = (e) => {
-    setRegisterInfo({ ...registerInfo, [e.target.name]: e.target.value })
+    setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value })
     setErrors({})
   }
 
-  //===== Create registration
+  //===== Log user in
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('/api/register/', registerInfo)
-      .then(() => props.history.push('/login'))
+    const loginLower = { ...loginInfo }
+    loginLower.email = loginLower.email.toLowerCase()
+    axios.post('/api/login/', loginLower)
+      .then((resp) => {
+        Auth.setToken(resp.data.token)
+        props.history.push('/prescriptions')
+      })
       .catch((err) => {
         setErrors(err.response.data)
       })
@@ -62,51 +67,38 @@ const Register = (props) => {
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar >
+        </Avatar>
         <Typography component="h1" variant="h4">
-          Register
+          Login
         </Typography>
         <form className={classes.form} noValidate onSubmit={(e) => handleSubmit(e)}>
           {/* <ThemeProvider theme={theme}> */}
           <TextField
-            error={err.username && true}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label={err.username ? 'Error' : 'Username'}
-            name="username"
-            autoComplete="email"
-            helperText={err.username}
-            autoFocus
-            onChange={(e) => handleChange(e)}
-          />
-          <TextField
-            error={err.email && true}
+            error={err.message && true}
             variant="outlined"
             margin="normal"
             required
             fullWidth
             id="email"
-            label={err.email ? 'Error' : 'Email Address'}
-            helperText={err.email}
+            label={err.message ? 'Error' : 'Email Address'}
+            helperText={err.message}
             name="email"
             autoComplete="email"
+            autoFocus
             onChange={(e) => handleChange(e)}
           />
           <TextField
-            error={err.password && true}
+            error={err.message && true}
             variant="outlined"
             margin="normal"
             required
             fullWidth
             name="password"
-            label={err.password ? 'Error' : 'Password'}
+            label={err.message ? 'Error' : 'Password'}
             type={showPassword ? 'text' : 'password'}
             id="password"
             autoComplete="current-password"
-            helperText={err.password}
+            helperText={err.message}
             onChange={(e) => handleChange(e)}
             InputProps={{
               endAdornment:
@@ -122,45 +114,7 @@ const Register = (props) => {
                 </InputAdornment>
             }}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password_confirmation"
-            label="Password Confirmation"
-            type={showPassword ? 'text' : 'password'}
-            id="password_confirmation"
-            autoComplete="confirmation-password"
-            onChange={(e) => handleChange(e)}
-            InputProps={{
-              endAdornment:
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-            }}
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            name="mobile"
-            label="Mobile Number"
-            type="mobile"
-            id="mobile"
-            autoComplete="current-password"
-            onChange={(e) => handleChange(e)}
-            InputProps={{
-              startAdornment: <InputAdornment position="start">+44</InputAdornment>
-            }}
-          />
+
           <Button
             type="submit"
             fullWidth
@@ -168,7 +122,7 @@ const Register = (props) => {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Login
           </Button>
           {/* </ThemeProvider> */}
         </form>
@@ -180,4 +134,4 @@ const Register = (props) => {
   )
 }
 
-export default Register
+export default Login
