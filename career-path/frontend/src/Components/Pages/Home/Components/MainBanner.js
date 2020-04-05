@@ -52,6 +52,9 @@ export default function MainFeaturedPost() {
             <Typography variant="h5" color="inherit" paragraph>
               in the M&A, Management Consulting and Private Equity space
             </Typography>
+            <Typography variant="h5" color="inherit" paragraph>
+              Direct, Fast and Complaint
+            </Typography>
             {/* <Link variant="subtitle1" href="#">
               Hello World
             </Link> */}
