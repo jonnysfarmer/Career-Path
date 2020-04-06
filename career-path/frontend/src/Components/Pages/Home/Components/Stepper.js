@@ -25,13 +25,15 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad']
+  return ['Create an account', 'Browse relevent roles from named employers', 'Apply and get feedback directly']
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return 'Step 1: Select campaign settings...'
+      return ({
+        name: 'Step 1: Select campaign settings...'
+      })
     case 1:
       return 'Step 2: What is an ad group anyways?'
     case 2:
@@ -56,6 +58,9 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
 
   return (
     <div className={classes.root}>
+      <Typography variant='h4' align='center'>
+        How it works
+      </Typography>
       <Stepper alternativeLabel nonLinear activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {}
@@ -75,7 +80,7 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
 
 
       <div>
-        <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+        <Typography className={classes.instructions}>{getStepContent(activeStep).name}</Typography>
 
       </div>
 
