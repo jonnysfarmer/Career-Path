@@ -86,7 +86,7 @@ function ResponsiveDrawer(props) {
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar >
           <Typography variant="h6" color='textSecondary' className={classes.grow}>
-            Path
+            Path One
           </Typography>
 
           <Button edge='end' href="/#/signup/" color="primary" size='small' variant="contained" className={classes.desktopMenuButton}>Sign Up</Button>
