@@ -5,6 +5,8 @@ import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
+import Avatar from '@material-ui/core/Avatar'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function getSteps() {
-  return ['Create an account', 'Browse relevent roles from named employers', 'Apply and get feedback directly']
+  return ['Create an account with a summary of your experience', 'Browse relevent roles from named employers', 'Apply and get feedback directly']
 }
 
 function getStepContent(step) {
@@ -34,7 +36,7 @@ function getStepContent(step) {
     case 0:
       return ({
         name: 'Create an account',
-        description: 'Create an account and input your current industry, sector and years of experience.  All this will be kept confidential until you apply for a position.'
+        description: 'Create an account and input your current industry, sector and years of experience.  All this will be kept confidential until you apply for a position.',
       })
     case 1:
       return 'Step 2: What is an ad group anyways?'
@@ -82,8 +84,6 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
       <Container maxWidth="sm">
         <Typography variant='h6' align='center' className={classes.instructions}>{getStepContent(activeStep).name}</Typography>
         <Typography align='center' color='textSecondary'>{getStepContent(activeStep).description}</Typography>
-
-
       </Container>
 
 
