@@ -4,6 +4,7 @@ import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +33,8 @@ function getStepContent(step) {
   switch (step) {
     case 0:
       return ({
-        name: 'Step 1: Select campaign settings...'
+        name: 'Create an account',
+        description: 'Create an account and input your current industry, sector and years of experience.  All this will be kept confidential until you apply for a position.'
       })
     case 1:
       return 'Step 2: What is an ad group anyways?'
@@ -50,11 +52,9 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
 
   const [activeStep, setActiveStep] = useState(0)
 
-
   const handleStep = (step) => () => {
     setActiveStep(step)
   }
-
 
   return (
     <div className={classes.root}>
@@ -79,10 +79,12 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
       </Stepper>
 
 
-      <div>
-        <Typography className={classes.instructions}>{getStepContent(activeStep).name}</Typography>
+      <Container maxWidth="sm">
+        <Typography variant='h6' align='center' className={classes.instructions}>{getStepContent(activeStep).name}</Typography>
+        <Typography align='center' color='textSecondary'>{getStepContent(activeStep).description}</Typography>
 
-      </div>
+
+      </Container>
 
 
     </div>
