@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import Link from '@material-ui/core/Link'
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://www.careershifters.org/sites/default/files/styles/article_node/public/field/image/7880846472_52569c4a69_c.jpg?itok=osyNaoWx)',
+    backgroundImage: 'url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/k-185-ae-4013.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=800&s=ff2a3170438105a653e557106db9e36a)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
@@ -53,11 +52,8 @@ export default function MainFeaturedPost() {
               in the M&A, Management Consulting and Private Equity space
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              Direct, Fast and Complaint
+              Direct, Fast and Compliant
             </Typography>
-            {/* <Link variant="subtitle1" href="#">
-              Hello World
-            </Link> */}
           </div>
         </Grid>
       </Grid>

@@ -64,7 +64,7 @@ const Register = (props) => {
           <LockOutlinedIcon />
         </Avatar >
         <Typography component="h1" variant="h4">
-          Create a new account
+          New Account
         </Typography>
         <form className={classes.form} noValidate onSubmit={(e) => handleSubmit(e)}>
           {/* <ThemeProvider theme={theme}> */}
