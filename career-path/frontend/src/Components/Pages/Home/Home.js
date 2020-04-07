@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import MainBanner from './Components/MainBanner'
 import HorizontalNonLinearStepper from './Components/Stepper'
+import NewsFeed from './Components/NewsFeed'
 
 const useStyles = makeStyles(theme => ({
   offset: theme.mixins.toolbar,
@@ -48,6 +49,7 @@ const Home = () => {
 
         <MainBanner />
         <HorizontalNonLinearStepper />
+        <NewsFeed />
 
       </Container>
     </div>
