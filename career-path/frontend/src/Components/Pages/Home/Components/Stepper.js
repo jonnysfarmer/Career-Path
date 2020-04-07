@@ -36,12 +36,18 @@ function getStepContent(step) {
     case 0:
       return ({
         name: 'Create an account',
-        description: 'Create an account and input your current industry, sector and years of experience.  All this will be kept confidential until you apply for a position.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque. Tincidunt dui ut ornare lectus sit amet. Posuere lorem ipsum dolor sit amet. Arcu cursus euismod quis viverra nibh cras pulvinar mattis.'
       })
     case 1:
-      return 'Step 2: What is an ad group anyways?'
+      return ({
+        name: 'Browse relevent roles from direct employers',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque. Tincidunt dui ut ornare lectus sit amet. Posuere lorem ipsum dolor sit amet. Arcu cursus euismod quis viverra nibh cras pulvinar mattis.'
+      })
     case 2:
-      return 'Step 3: This is the bit I really care about!'
+      return ({
+        name: 'Apply and get feedback directly',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida dictum fusce ut placerat orci nulla pellentesque. Tincidunt dui ut ornare lectus sit amet. Posuere lorem ipsum dolor sit amet. Arcu cursus euismod quis viverra nibh cras pulvinar mattis.'
+      })
     default:
       return 'Unknown step'
   }
