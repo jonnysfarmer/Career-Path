@@ -5,25 +5,18 @@ import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
-import Avatar from '@material-ui/core/Avatar'
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%'
   },
-  button: {
-    marginRight: theme.spacing(1)
-  },
-  backButton: {
-    marginRight: theme.spacing(1)
-  },
-  completed: {
-    display: 'inline-block'
-  },
   instructions: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1)
+  },
+  instructionsContent: {
+    marginBottom: theme.spacing(4)
   }
 }))
 
@@ -72,12 +65,10 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
       <Stepper alternativeLabel nonLinear activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {}
-
           return (
             <Step key={label} {...stepProps}>
               <StepButton
                 onClick={handleStep(index)}
-
               >
                 {label}
               </StepButton>
@@ -89,7 +80,7 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
 
       <Container maxWidth="sm">
         <Typography variant='h6' align='center' className={classes.instructions}>{getStepContent(activeStep).name}</Typography>
-        <Typography align='center' color='textSecondary'>{getStepContent(activeStep).description}</Typography>
+        <Typography align='center' color='textSecondary' className={classes.instructionsContent}>{getStepContent(activeStep).description}</Typography>
       </Container>
 
 
